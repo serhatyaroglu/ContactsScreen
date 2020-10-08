@@ -15,6 +15,8 @@
 		79CEF107252C4CBD00EB42B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CEF105252C4CBD00EB42B6 /* LaunchScreen.storyboard */; };
 		79CEF112252C4CBD00EB42B6 /* ContactsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF111252C4CBD00EB42B6 /* ContactsScreenTests.swift */; };
 		79CEF11D252C4CBD00EB42B6 /* ContactsScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF11C252C4CBD00EB42B6 /* ContactsScreenUITests.swift */; };
+		79CEF143252C883D00EB42B6 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79CEF142252C883D00EB42B6 /* Property List.plist */; };
+		79D67D3B252F4552002AF383 /* SegoeUIFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79D67D3A252F4552002AF383 /* SegoeUIFont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 		79CEF0F7252C4CBD00EB42B6 /* ContactsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CEF0FA252C4CBD00EB42B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CEF0FC252C4CBD00EB42B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		79CEF0FE252C4CBD00EB42B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79CEF0FE252C4CBD00EB42B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79CEF101252C4CBD00EB42B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79CEF103252C4CBD00EB42B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CEF106252C4CBD00EB42B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		79CEF118252C4CBD00EB42B6 /* ContactsScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CEF11C252C4CBD00EB42B6 /* ContactsScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsScreenUITests.swift; sourceTree = "<group>"; };
 		79CEF11E252C4CBD00EB42B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79CEF142252C883D00EB42B6 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		79D67D3A252F4552002AF383 /* SegoeUIFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SegoeUIFont.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		79CEF0EE252C4CBD00EB42B6 = {
 			isa = PBXGroup;
 			children = (
+				79CEF142252C883D00EB42B6 /* Property List.plist */,
 				79CEF0F9252C4CBD00EB42B6 /* ContactsScreen */,
 				79CEF110252C4CBD00EB42B6 /* ContactsScreenTests */,
 				79CEF11B252C4CBD00EB42B6 /* ContactsScreenUITests */,
@@ -99,6 +104,7 @@
 		79CEF0F9252C4CBD00EB42B6 /* ContactsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				79D67D2B252F444B002AF383 /* Fonts */,
 				79CEF0FA252C4CBD00EB42B6 /* AppDelegate.swift */,
 				79CEF0FC252C4CBD00EB42B6 /* SceneDelegate.swift */,
 				79CEF0FE252C4CBD00EB42B6 /* ViewController.swift */,
@@ -126,6 +132,14 @@
 				79CEF11E252C4CBD00EB42B6 /* Info.plist */,
 			);
 			path = ContactsScreenUITests;
+			sourceTree = "<group>";
+		};
+		79D67D2B252F444B002AF383 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				79D67D3A252F4552002AF383 /* SegoeUIFont.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +245,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CEF143252C883D00EB42B6 /* Property List.plist in Resources */,
 				79CEF107252C4CBD00EB42B6 /* LaunchScreen.storyboard in Resources */,
+				79D67D3B252F4552002AF383 /* SegoeUIFont.ttf in Resources */,
 				79CEF104252C4CBD00EB42B6 /* Assets.xcassets in Resources */,
 				79CEF102252C4CBD00EB42B6 /* Main.storyboard in Resources */,
 			);
