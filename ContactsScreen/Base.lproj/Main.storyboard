@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,25 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Kisi Ara" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-k2-zoX">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE0-cS-F0Z">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE0-cS-F0Z">
                                 <rect key="frame" x="16" y="800" width="382" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="lwa-ly-ndg"/>
-                                    <constraint firstAttribute="height" constant="48" id="rCH-XB-zbG"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Yeni Telefon Ekle">
@@ -52,25 +41,96 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-BG-bW6">
-                                <rect key="frame" x="20" y="144" width="378" height="617"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-BG-bW6">
+                                <rect key="frame" x="0.0" y="171" width="414" height="616"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="13" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="87" id="1nu-Qu-9fc" customClass="KisilerTableViewCell" customModule="ContactsScreen">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="80" restorationIdentifier="TableCellIdenfier" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="1nu-Qu-9fc" id="8tT-gk-spR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="djL-On-jv6">
+                                                    <rect key="frame" x="374" y="30.845290883642747" width="20.000000000000114" height="18.999999999999986"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dsfsddf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsA-VT-TWP">
+                                                    <rect key="frame" x="82" y="11" width="138" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+905554443322" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyb-Lc-APu">
+                                                    <rect key="frame" x="82" y="35" width="133" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duman" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMU-Hn-PIj">
+                                                    <rect key="frame" x="20" y="11" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <viewLayoutGuide key="safeArea" id="J5n-7u-Qf9"/>
+                                            <color key="backgroundColor" name="Color"/>
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="_ImageP" destination="uMU-Hn-PIj" id="xii-vd-9nE"/>
+                                            <outlet property="_check" destination="djL-On-jv6" id="khS-Dd-A6A"/>
+                                            <outlet property="_nameL" destination="OsA-VT-TWP" id="pxV-CD-LD0"/>
+                                            <outlet property="_phoneNumber" destination="iyb-Lc-APu" id="OoZ-PL-5BB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-ox-yuN">
+                                <rect key="frame" x="0.0" y="88" width="57" height="54"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button" image="magnifyingglass" catalog="system"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kisi Ara" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gyD-Qj-yeF">
+                                <rect key="frame" x="65" y="88" width="350" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="1P6-i9-W0j"/>
+                                    <constraint firstAttribute="width" constant="350" id="ZLB-jV-Iyw"/>
+                                </constraints>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hE0-cS-F0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="24D-Nb-0Ue"/>
-                            <constraint firstItem="hE0-cS-F0Z" firstAttribute="top" secondItem="KcF-BG-bW6" secondAttribute="bottom" constant="14" id="A6d-mQ-Pq3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hE0-cS-F0Z" secondAttribute="bottom" constant="14" id="SWt-57-E3P"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hE0-cS-F0Z" secondAttribute="trailing" constant="16" id="x6d-5u-1rM"/>
+                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="top" secondItem="d7d-ox-yuN" secondAttribute="top" id="Umn-aI-7bH"/>
+                            <constraint firstItem="d7d-ox-yuN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d23-Qb-DVq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gyD-Qj-yeF" secondAttribute="trailing" constant="-21" id="hgK-sx-596"/>
+                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="bottom" secondItem="d7d-ox-yuN" secondAttribute="bottom" id="nrd-hX-NuR"/>
+                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d7d-ox-yuN" secondAttribute="trailing" constant="8" symbolic="YES" id="s6Z-OV-Ojt"/>
+                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vjV-7m-bnd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Telefon Rehberi" id="IdQ-qg-rRS">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" width="2" id="ln6-c5-MDO"/>
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" width="2" id="ln6-c5-MDO">
+                            <color key="tintColor" red="0.070725210009999998" green="0.078249491749999997" blue="0.086275853220000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="ButtonRadius" destination="hE0-cS-F0Z" id="QiI-Df-hgz"/>
+                        <outlet property="SearchIcon" destination="d7d-ox-yuN" id="P9x-f3-2SG"/>
+                        <outlet property="searchBarTextField" destination="gyD-Qj-yeF" id="BY0-ht-fTf"/>
+                        <outlet property="tableview" destination="KcF-BG-bW6" id="pl8-kv-VFp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,6 +158,12 @@
     </scenes>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="check" width="32" height="30"/>
+        <image name="duman" width="457" height="252"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <namedColor name="Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
