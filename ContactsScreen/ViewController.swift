@@ -6,7 +6,10 @@
 //
 
 import UIKit
-
+struct Section {
+    let letter : String
+    let names : [String]
+}
 
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
@@ -23,24 +26,33 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var tableview: UITableView!
     
   
-  
+       
     var searchedArray:[String] = Array()
     
+       var sections = [Section]()
     
-    
-    var kisiIsimleri = ["serhat yaroglu","Mehmet ALi","Ayse Fatma","serhat yaroglu","Mehmet ALi","Ayse Fatma","serhat yaroglu","Mehmet ALi","Ayse Fatma","serhat yaroglu","Mehmet ALi","Ayse Fatma","serhat yaroglu","Mehmet ALi","Ayse Fatma","serhat yaroglu","Mehmet ALi","Ayse Fatma"]
+    var kisiIsimleri = ["faruk yaroglu","batu ALi","saziye Fatma","kirca yaroglu","burak ALi","ozcan Fatma","seda yaroglu","yusuf ALi","deniz Fatma","kirali yaroglu","birol ALi","apple Fatma"]
+       
  
-    var kisiNumaralari = ["+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519"]
+    var kisiNumaralari = ["+934564519","+904453264519","+94234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519","+904564519","+90453264519","+90234564519"]
     var kisiResimleri = [UIImage(named: "duman"),UIImage(named: "duman2"),]
     
     var kisiIcon = [UIImage(named: "check"),UIImage(named: "check1")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for str in kisiIsimleri {
+       for str in kisiIsimleri {
             searchedArray.append(str)
         }
-   
+           let groupedDictionary = Dictionary(grouping: kisiIsimleri, by: {String($0.prefix(1))})
+           // get the keys and sort them
+           let keys = groupedDictionary.keys.sorted()
+           // map the sorted keys to a struct
+           sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+       
+       
+       
+       tableview.reloadData()
         tableview.delegate = self
         tableview.dataSource = self
         ButtonRadius.layer.cornerRadius = 12
@@ -58,19 +70,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
-
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  
-        
-        return searchedArray.count
+       
+       
+
+       return sections[section].names.count
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath ) as! KisilerTableViewCell
+         let section = sections[indexPath.section]
+         let kisiIsimleri = section.names[indexPath.row]
+       cell._nameL.text = kisiIsimleri
        let oldFrame = cell.contentView.frame
       cell.contentView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width + 10, height: oldFrame.size.height)
         cell.backgroundColor = .clear // very important
@@ -83,12 +97,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.layer.shadowRadius = 4
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowColor = UIColor.black.cgColor
-        
-  
-        cell._nameL.text = self.searchedArray[indexPath.row]
-        
+       
+       
+      
+      
         cell._phoneNumber.text = self.kisiNumaralari[indexPath.row]
         print(indexPath.row)
+       if indexPath.row==10{
+              cell._nameL.text = self.kisiIsimleri[indexPath.row]
+       }
         if indexPath.row==1 {
             cell._ImageP.image = kisiResimleri[indexPath.row]
         }
@@ -103,7 +120,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         cell.backgroundConfiguration = backgroundConfig
         
-    
+     
   
        
       
@@ -111,6 +128,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
     }
+       func numberOfSections(in tableView: UITableView) -> Int {
+           return sections.count
+       }
+
+       func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+           return sections.map{$0.letter}
+       }
+
+       func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+           return sections[section].letter
+       }
+
     func textFieldShouldClear(_ textField: UITextField) -> Bool{
         searchBarTextField.resignFirstResponder()
         searchBarTextField.text = ""
