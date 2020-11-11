@@ -15,8 +15,6 @@ class KisilerTableViewCell: UITableViewCell {
     @IBOutlet weak var _phoneNumber: UILabel!
     
     @IBOutlet weak var _nameL: UILabel!
-
-   
     @IBOutlet weak var _ImageP: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

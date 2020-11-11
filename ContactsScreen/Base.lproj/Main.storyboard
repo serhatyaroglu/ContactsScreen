@@ -40,6 +40,9 @@
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="TK0-aS-Yuo" kind="show" id="5xu-eK-Rtt"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-BG-bW6">
                                 <rect key="frame" x="0.0" y="171" width="414" height="616"/>
@@ -89,22 +92,21 @@
                                             <outlet property="_check" destination="djL-On-jv6" id="khS-Dd-A6A"/>
                                             <outlet property="_nameL" destination="OsA-VT-TWP" id="pxV-CD-LD0"/>
                                             <outlet property="_phoneNumber" destination="iyb-Lc-APu" id="OoZ-PL-5BB"/>
+                                            <segue destination="6K3-Ac-b2p" kind="show" id="Eqp-E7-bqP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-ox-yuN">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-ox-yuN">
                                 <rect key="frame" x="0.0" y="88" width="57" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Button" image="magnifyingglass" catalog="system"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kisi Ara" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gyD-Qj-yeF">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Kisi Ara" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gyD-Qj-yeF">
                                 <rect key="frame" x="65" y="88" width="350" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="1P6-i9-W0j"/>
-                                    <constraint firstAttribute="width" constant="350" id="ZLB-jV-Iyw"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                 <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
@@ -112,14 +114,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="top" secondItem="d7d-ox-yuN" secondAttribute="top" id="Umn-aI-7bH"/>
-                            <constraint firstItem="d7d-ox-yuN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d23-Qb-DVq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gyD-Qj-yeF" secondAttribute="trailing" constant="-21" id="hgK-sx-596"/>
-                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="bottom" secondItem="d7d-ox-yuN" secondAttribute="bottom" id="nrd-hX-NuR"/>
-                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d7d-ox-yuN" secondAttribute="trailing" constant="8" symbolic="YES" id="s6Z-OV-Ojt"/>
-                            <constraint firstItem="gyD-Qj-yeF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vjV-7m-bnd"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Telefon Rehberi" id="IdQ-qg-rRS">
                         <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" width="2" id="ln6-c5-MDO">
@@ -136,6 +130,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="103.79464285714285"/>
+        </scene>
+        <!--iletisim detay-->
+        <scene sceneID="bwX-x4-nCP">
+            <objects>
+                <viewController id="6K3-Ac-b2p" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MvL-GY-hMn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Hv6-kL-5Dd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="iletisim detay" id="ApW-Ea-la3">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="pencil" catalog="system" id="y6P-7p-lXo">
+                            <connections>
+                                <segue destination="ym5-R0-ffL" kind="show" id="lsT-5H-ePL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQc-Ck-BAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="104"/>
+        </scene>
+        <!--yeni kisi ekle-->
+        <scene sceneID="3JE-gO-XDe">
+            <objects>
+                <viewController id="TK0-aS-Yuo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o47-br-eDg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EAI-kN-nz5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="yeni kisi ekle" id="qsR-x2-GNS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xNe-bJ-8zT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2413" y="104"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IkW-q6-aRn">
+            <objects>
+                <viewController id="ym5-R0-ffL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gLH-ro-49S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ly7-sV-AJv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bwH-7J-VQS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwj-Jw-f9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3111" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5dY-Xx-wRo">
@@ -161,6 +209,7 @@
         <image name="check" width="32" height="30"/>
         <image name="duman" width="457" height="252"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

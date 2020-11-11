@@ -14,10 +14,10 @@
             filePath = "ContactsScreen/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "1689149B-878C-44F2-9FFE-3BACE3BF15F9 - f06f6b914a15db6d"
@@ -55,57 +55,57 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008"
+            uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ContactsScreen/ViewController.swift"
+            filePath = "ContactsScreen/KisilerTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "KisilerTableViewCell"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - 7b3399e4059410bf"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 78807628d7a3f41d"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.SearchIcon.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  symbolName = "ContactsScreen.KisilerTableViewCell._nameL.getter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - 3ffe9b66cf0b608b"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 8a58e3cd0d485009"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.SearchIcon.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  symbolName = "ContactsScreen.KisilerTableViewCell._nameL.setter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "155">
                </Location>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - a7726e4d04ec314e"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - e08e60b47f63dd2f"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.SearchIcon.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  symbolName = "ContactsScreen.KisilerTableViewCell._nameL.modify : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -113,49 +113,49 @@
                   offsetFromSymbolStart = "59">
                </Location>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - 3a013bc1edf1bd5"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 88895a8a53a32715"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.SearchIcon.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "ContactsScreen.KisilerTableViewCell._nameL.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "64">
                </Location>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - f06f6b914a15db6d"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - a39439b2d2ced125"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ContactsScreen.ViewController"
+                  symbolName = "ContactsScreen.KisilerTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; ContactsScreen.KisilerTableViewCell"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "602">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "485">
                </Location>
                <Location
-                  uuid = "85CE2B9A-BA42-4198-A1C0-0AC5C652E008 - 8ce9e25ae2944931"
-                  shouldBeEnabled = "No"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 469cd173901571d6"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactsScreen.ViewController&gt;"
+                  symbolName = "ContactsScreen.KisilerTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactsScreen.KisilerTableViewCell&gt;"
                   moduleName = "ContactsScreen"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
+                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "543">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "426">
                </Location>
             </Locations>
          </BreakpointContent>
