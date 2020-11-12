@@ -7,21 +7,38 @@
 
 import UIKit
 import Alamofire
+
 struct Section {
-    let letter : String
-    let names : [String]
+       let letter : String
+       let names : [String]
+}
+extension UIImage {
+  convenience init?(url: URL?) {
+    guard let url = url else { return nil }
+            
+    do {
+      self.init(data: try Data(contentsOf: url))
+    } catch {
+      print("Cannot load image from url: \(url) with error: \(error)")
+      return nil
+    }
+  }
 }
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
        @IBOutlet weak var searchBarTextField: UITextField!
        @IBOutlet weak var ButtonRadius: UIButton!
        @IBOutlet weak var SearchIcon: UIButton!
        @IBOutlet weak var tableview: UITableView!
+
+      
        
        var Contacts = [Contact]()
        var apiResult : ApiResult? = nil
        
+    
        var searchedArray:[String] = Array()
        var sections = [Section]()
+       
        
        override func viewWillAppear(_ animated: Bool) {
               getContacts()
@@ -32,14 +49,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               super.viewDidLoad()
               
               
-             for str in [Contacts] {
-searchedArray.append("str")
+              for str in [Contacts] {
+                     searchedArray.append("str")
               }
               //let groupedDictionary = Dictionary(grouping: kisiIsimleri, by: {String($0.prefix(1))})
               // get the keys and sort them
               //let keys = groupedDictionary.keys.sorted()
               // map the sorted keys to a struct
-            //  sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+              //  sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
               tableview.reloadData()
               tableview.delegate = self
               tableview.dataSource = self
@@ -72,27 +89,31 @@ searchedArray.append("str")
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
               return Contacts.count
        }
+      
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
               let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath ) as! KisilerTableViewCell
-             // let section = sections[indexPath.section]
+              // let section = sections[indexPath.section]
               //let Section = section.names[indexPath.row]
-              
+             
               
               //TO DO : use contact request and get data from api at here
               //ContactRequest.getContacts(<#T##self: ContactRequest##ContactRequest#>)
               
               let currentContact = Contacts[indexPath.row]
+             
               
               cell._nameL?.text = currentContact.name
               cell._phoneNumber?.text = currentContact.number
-             // if !currentContact.photo.isEmpty{
-                     //cell._ImageP?. = currentContact.name
-                     // to do : url image nasil yuklenecegini arastirip duzelt.
-                     
-                     
-            //  }else{
-                     // fotograf yoktur ve texti al 
-            //  }
+              
+              if !currentContact.photo.isEmpty{
+                     cell.imagePhoto.image = UIImage(url: URL(string: currentContact.photo))
+                  
+              // to do : url image nasil yuklenecegini arastirip duzelt.
+              
+              
+               }else{
+              // fotograf yoktur ve texti al
+                 }
               
               let oldFrame = cell.contentView.frame
               cell.contentView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width + 10, height: oldFrame.size.height)
@@ -107,7 +128,7 @@ searchedArray.append("str")
               cell.layer.shadowOffset = CGSize(width: 0, height: 0)
               cell.layer.shadowColor = UIColor.black.cgColor
               //cell._phoneNumber.text = Contacts[indexPath.row].number
-                    // print(indexPath.row)
+              // print(indexPath.row)
               //              if indexPath.row==10{
               //                     cell._nameL.text = self.kisiIsimleri[indexPath.row]
               //              }
@@ -123,19 +144,19 @@ searchedArray.append("str")
        }
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
               performSegue(withIdentifier: "ContactInfo", sender: Contacts[indexPath.row])
-          }
+       }
        
        func numberOfSections(in tableView: UITableView) -> Int {
               return 1
        }
-    
+       
        func sectionIndexTitles(for tableView: UITableView) -> [String]? {
               return sections.map{$0.letter}
        }
        
-      // func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      //        return sections[section].letter
-      // }
+       // func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       //        return sections[section].letter
+       // }
        func textFieldShouldClear(_ textField: UITextField) -> Bool{
               searchBarTextField.resignFirstResponder()
               searchBarTextField.text = ""

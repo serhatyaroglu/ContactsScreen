@@ -75,9 +75,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="duman" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMU-Hn-PIj">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMU-Hn-PIj">
                                                     <rect key="frame" x="20" y="11" width="48" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
                                             </subviews>
                                             <viewLayoutGuide key="safeArea" id="J5n-7u-Qf9"/>
@@ -88,10 +89,10 @@
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="13" minY="0.0" maxX="13" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="_ImageP" destination="uMU-Hn-PIj" id="xii-vd-9nE"/>
                                             <outlet property="_check" destination="djL-On-jv6" id="khS-Dd-A6A"/>
                                             <outlet property="_nameL" destination="OsA-VT-TWP" id="pxV-CD-LD0"/>
                                             <outlet property="_phoneNumber" destination="iyb-Lc-APu" id="OoZ-PL-5BB"/>
+                                            <outlet property="imagePhoto" destination="uMU-Hn-PIj" id="0ni-Hp-wAs"/>
                                             <segue destination="6K3-Ac-b2p" kind="show" id="Eqp-E7-bqP"/>
                                         </connections>
                                     </tableViewCell>
@@ -151,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQc-Ck-BAa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1719" y="104"/>
+            <point key="canvasLocation" x="1780" y="-116"/>
         </scene>
         <!--yeni kisi ekle-->
         <scene sceneID="3JE-gO-XDe">
@@ -167,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNe-bJ-8zT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="104"/>
+            <point key="canvasLocation" x="2200" y="520"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IkW-q6-aRn">
@@ -183,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwj-Jw-f9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="113"/>
+            <point key="canvasLocation" x="2797" y="-186"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5dY-Xx-wRo">
@@ -207,7 +208,6 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="check" width="32" height="30"/>
-        <image name="duman" width="457" height="252"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <namedColor name="Color">

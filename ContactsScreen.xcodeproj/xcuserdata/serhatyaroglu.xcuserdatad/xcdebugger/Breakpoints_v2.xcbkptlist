@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1689149B-878C-44F2-9FFE-3BACE3BF15F9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ContactsScreen/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "1689149B-878C-44F2-9FFE-3BACE3BF15F9 - f06f6b914a15db6d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ContactsScreen.ViewController"
-                  moduleName = "ContactsScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "602">
-               </Location>
-               <Location
-                  uuid = "1689149B-878C-44F2-9FFE-3BACE3BF15F9 - 8ce9e25ae2944931"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ContactsScreen.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactsScreen.ViewController&gt;"
-                  moduleName = "ContactsScreen"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "543">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -68,7 +20,7 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 78807628d7a3f41d"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 78807628d7a3f7f2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -78,12 +30,12 @@
                   urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 8a58e3cd0d485009"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 8a58e3cd0d4853e6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -93,8 +45,8 @@
                   urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "155">
                </Location>
                <Location
@@ -113,7 +65,7 @@
                   offsetFromSymbolStart = "59">
                </Location>
                <Location
-                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 88895a8a53a32715"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 88895a8a53a324fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -123,12 +75,12 @@
                   urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "64">
                </Location>
                <Location
-                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - a39439b2d2ced125"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - a39439b2d2ced2ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -138,12 +90,12 @@
                   urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "485">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "456">
                </Location>
                <Location
-                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 469cd173901571d6"
+                  uuid = "F75DD14A-68D2-4E6A-8E93-E9B2A45D831F - 469cd17390157239"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -153,9 +105,9 @@
                   urlString = "file:///Users/serhatyaroglu/Desktop/Swift/ContactsScreen/ContactsScreen/KisilerTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "426">
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "367">
                </Location>
             </Locations>
          </BreakpointContent>
