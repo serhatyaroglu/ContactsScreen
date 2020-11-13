@@ -8,8 +8,8 @@
 import UIKit
 
 class KisilerTableViewCell: UITableViewCell {
-
- 
+   
+    @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var _check: UIImageView!
     
     @IBOutlet weak var _phoneNumber: UILabel!
@@ -18,17 +18,19 @@ class KisilerTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var _nameL: UILabel!
-  
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         imagePhoto.layer.cornerRadius = 10
-       
-       
+        imageLabel.layer.cornerRadius = 10
+        
         
     }
    
-
+    
+ 
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

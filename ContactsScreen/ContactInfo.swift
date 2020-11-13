@@ -21,9 +21,11 @@ struct Response :Decodable
 
 struct Contact:Decodable {
     let id:String
-    let name:String
+    let firstName:String
     let number:String
     let photo:String
+    let lastName:String
+    
     
 }
 
