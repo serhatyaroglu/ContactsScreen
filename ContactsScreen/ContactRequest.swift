@@ -12,7 +12,7 @@ enum ContactError:Error {
 }
 struct ContactRequest {
     let resourceURL:URL
-    let API_KEY = "63168fa6"
+    let API_KEY = "dd30918e"
     init(contactCode:String) {
         let resourceString = "https://api.mocki.io/v1/\(API_KEY)"
         guard let resourceURL = URL(string: resourceString) else {fatalError()}

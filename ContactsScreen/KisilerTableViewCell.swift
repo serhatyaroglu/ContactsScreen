@@ -23,7 +23,9 @@ class KisilerTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         imagePhoto.layer.cornerRadius = 10
-        imageLabel.layer.cornerRadius = 10
+        imageLabel.layer.cornerRadius = 11
+        imageLabel.layer.borderWidth = 1.0
+        imageLabel.layer.borderColor =  UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00).cgColor
         
         
     }

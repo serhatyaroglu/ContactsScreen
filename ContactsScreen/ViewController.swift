@@ -32,16 +32,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
        var apiResult : ApiResult? = nil
        var searchedArray:[String] = Array()
        var sections = [Section]()
-       
        override func viewWillAppear(_ animated: Bool) {
               getContacts()
               print(self.Contacts)
        }
        override func viewDidLoad() {
               super.viewDidLoad()
-              for str in [Contacts] {
-                     searchedArray.append("str")
-              }
+             // for str in [Contacts] {
+                    // searchedArray.append("str")
+              //}
               //let groupedDictionary = Dictionary(grouping: kisiIsimleri, by: {String($0.prefix(1))})
               // get the keys and sort them
               //let keys = groupedDictionary.keys.sorted()
@@ -54,13 +53,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               tableview.layer.cornerRadius = 12
               searchBarTextField.delegate = self
               self.view.layoutMargins = UIEdgeInsets.zero
-              
-            
-              
+              ButtonRadius.translatesAutoresizingMaskIntoConstraints = false
+              searchBarTextField.translatesAutoresizingMaskIntoConstraints = false
+              searchBarTextField.widthAnchor.constraint(equalToConstant: 293).isActive = true
+              searchBarTextField.heightAnchor.constraint(equalToConstant: 48).isActive = true
+              searchBarTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 55).isActive = true
+              searchBarTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+              ButtonRadius.widthAnchor.constraint(equalToConstant: 343).isActive = true
+              ButtonRadius.heightAnchor.constraint(equalToConstant: 48).isActive = true
+              ButtonRadius.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+              ButtonRadius.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+              ButtonRadius.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -37).isActive = true
               
        }
        func getContacts() {
-              AF.request("https://api.mocki.io/v1/63168fa6")
+              AF.request("https://api.mocki.io/v1/dd30918e")
                      .validate()
                      .responseDecodable(of: ApiResult.self) {
                             (response) in
@@ -76,16 +83,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               let maskLayer = CALayer()
               maskLayer.cornerRadius = 12    //if you want round edges
               maskLayer.backgroundColor = UIColor.black.cgColor
-              maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/4)
+              maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 1, dy: verticalPadding/6)
               cell.layer.mask = maskLayer
        let oldFrame = cell.contentView.frame
               cell.contentView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width + 10, height: oldFrame.size.height)
-              cell.indentationLevel = 2;
-            
-              
-              
-              
-              
        }
        
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,11 +103,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               cell._phoneNumber?.text = currentContact.number
               cell.contentView.layer.cornerRadius = 12
               cell.contentView.layer.borderWidth = 3
+              cell.contentView.layer.shadowColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00).cgColor
               cell.contentView.layer.borderColor = UIColor(red: 0.84, green: 0.85, blue: 0.86, alpha: 1.00).cgColor
               let firtsNameChar = String(Array(currentContact.firstName)[0])
               let lastNameChar = String(Array(currentContact.lastName)[0])
-              
-              
               if currentContact.photo.isEmpty  {
                      cell.imageLabel.text = firtsNameChar + lastNameChar
               }
@@ -114,7 +114,16 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                      //  cell.imageLabel = nil
                      cell.imageLabel.isHidden = true
                      cell.imagePhoto.image = UIImage(url: URL(string: currentContact.photo))
+                     
               }
+              
+              
+              
+              if currentContact.number == "" {
+                     print("-")
+              }
+              
+              
               
               //cell._phoneNumber.text = Contacts[indexPath.row].number
               // print(indexPath.row)
@@ -139,9 +148,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
        func sectionIndexTitles(for tableView: UITableView) -> [String]? {
               return sections.map{$0.letter}
        }
-       // func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-       //        return sections[section].letter
-       // }
+   //     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+     //          return sections[section].letter
+    //    }
        func textFieldShouldClear(_ textField: UITextField) -> Bool{
               searchBarTextField.resignFirstResponder()
               searchBarTextField.text = ""
