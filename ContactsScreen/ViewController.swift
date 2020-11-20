@@ -23,29 +23,55 @@ extension UIImage {
               }
        }
 }
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
+class ViewController: UIViewController{
        @IBOutlet weak var searchBarTextField: UITextField!
        @IBOutlet weak var ButtonRadius: UIButton!
        @IBOutlet weak var SearchIcon: UIButton!
        @IBOutlet weak var tableview: UITableView!
        var Contacts = [Contact]()
+       //  var contacts : [Contact] = ContactSource.contacts
+       // var sectionContacs : [[Contact]] = ContactRequest.
        var apiResult : ApiResult? = nil
-       var searchedArray:[String] = Array()
-       var sections = [Section]()
+       var searchedKey:String = ""
+       
+
+       var  CheckIcon = UIImage(named: "check")
+       var  CheckIconNon = UIImage(named: "checknon")
        override func viewWillAppear(_ animated: Bool) {
               getContacts()
               print(self.Contacts)
        }
        override func viewDidLoad() {
               super.viewDidLoad()
-             // for str in [Contacts] {
-                    // searchedArray.append("str")
+              /*
+               let grouped = Dictionary(grouping: Contacts){
+               (Contacts) -> Character in
+               return Contacts.firstName.first!
+               }
+               var groupedFirstName = [Contacts]
+               let keys = grouped.keys.sorted()
+               keys.forEach {(key) in
+               groupedFirstName.append(grouped[key]!)
+               }
+               groupedFirstName.forEach({
+               $0.forEach({print($0)})
+               print("-----")
+               
+               })
+               
+               
+               */
+              
+              // for str in [Contacts] {
+              // searchedArray.append("str")
               //}
-              //let groupedDictionary = Dictionary(grouping: kisiIsimleri, by: {String($0.prefix(1))})
               // get the keys and sort them
               //let keys = groupedDictionary.keys.sorted()
               // map the sorted keys to a struct
               //  sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+              
+              
+              
               tableview.reloadData()
               tableview.delegate = self
               tableview.dataSource = self
@@ -64,7 +90,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               ButtonRadius.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
               ButtonRadius.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
               ButtonRadius.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -37).isActive = true
-              
        }
        func getContacts() {
               AF.request("https://api.mocki.io/v1/dd30918e")
@@ -77,18 +102,56 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                             //print( self.apiResult!.metas.code )
                      }
        }
+       // func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+       //      return sections.map{$0.letter}
+       //}
+       //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       //     return sections[section].letter
+       //}
+      
+       override func didReceiveMemoryWarning() {
+              super.didReceiveMemoryWarning()
+       }
+}
+extension ViewController:UITextFieldDelegate{
+       
+       func textFieldShouldClear(_ textField: UITextField) -> Bool{
+              searchBarTextField.resignFirstResponder()
+              searchBarTextField.text = ""
+              self.Contacts.removeAll()
+              for contactsSearch in [Contacts] {
+                     Contacts.append(contentsOf: contactsSearch)
+              }
+              tableview.reloadData()
+              return false
+       }
+       func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+              
+              if searchBarTextField.text?.count != 0 {
+                     self.Contacts.removeAll()
+                     for contactsSearch in Contacts {
+                            let range = searchedKey.description.range(of: (textField.text)!, options: .caseInsensitive, range: nil, locale: nil)
+                            //.firstName.range(of: textField.text!, options: .caseInsensitive, range: nil, locale: nil)
+                            if range != nil{
+                                   self.Contacts.append(contactsSearch)
+                            }
+                     }
+              }
+              tableview.reloadData()
+              return true
+       }
+}
+extension ViewController:UITableViewDelegate,UITableViewDataSource{
        func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
               let verticalPadding: CGFloat = 8
-              
               let maskLayer = CALayer()
               maskLayer.cornerRadius = 12    //if you want round edges
               maskLayer.backgroundColor = UIColor.black.cgColor
               maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 1, dy: verticalPadding/6)
               cell.layer.mask = maskLayer
-       let oldFrame = cell.contentView.frame
+              let oldFrame = cell.contentView.frame
               cell.contentView.frame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.size.width + 10, height: oldFrame.size.height)
        }
-       
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
               return Contacts.count
        }
@@ -114,17 +177,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                      //  cell.imageLabel = nil
                      cell.imageLabel.isHidden = true
                      cell.imagePhoto.image = UIImage(url: URL(string: currentContact.photo))
-                     
               }
-              
-              
-              
-              if currentContact.number == "" {
-                     print("-")
+              let apiNumberEmpty = "-"
+              if currentContact.number.isEmpty  {
+                     cell._phoneNumber.text = apiNumberEmpty
+                     cell._check.image = CheckIconNon
               }
-              
-              
-              
+              else{
+                     cell._check.image = CheckIcon
+              }
+              // let groupByCategory = Dictionary(grouping: currentContact.firstName, by: [currentContact.firstName(String ($0))])
+              // let groupByCategory = Dictionary(grouping: currentContact.firstName{String ($0)})
+              // let dictionary = Dictionary(grouping: currentContact.firstName, by: { (element: Contact) in
+              //  return element.name
+              //})
               //cell._phoneNumber.text = Contacts[indexPath.row].number
               // print(indexPath.row)
               //              if indexPath.row==10{
@@ -136,39 +202,13 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
               //              if indexPath.row<2 {
               //                     cell._check.image = kisiIcon[indexPath.row]
               //              }
+              
               return cell
        }
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-              performSegue(withIdentifier: "ContactInfo", sender: Contacts[indexPath.row])
+              //performSegue(withIdentifier: "ContactInfo", sender: Contacts[indexPath.row])
        }
-       
        func numberOfSections(in tableView: UITableView) -> Int {
               return 1
-       }
-       func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-              return sections.map{$0.letter}
-       }
-   //     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-     //          return sections[section].letter
-    //    }
-       func textFieldShouldClear(_ textField: UITextField) -> Bool{
-              searchBarTextField.resignFirstResponder()
-              searchBarTextField.text = ""
-              self.searchedArray.removeAll()
-            //  for str in [Contacts] {
-                  //   searchedArray.append("str")
-              //}
-              tableview.reloadData()
-              return false
-       }
-       func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-              if searchBarTextField.text?.count != 0 {
-                     self.searchedArray.removeAll()
-              }
-              tableview.reloadData()
-              return true
-       }
-       override func didReceiveMemoryWarning() {
-              super.didReceiveMemoryWarning()
        }
 }

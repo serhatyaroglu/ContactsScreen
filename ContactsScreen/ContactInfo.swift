@@ -8,7 +8,6 @@
 import Foundation
 import Alamofire
 
-
 struct ApiResult : Decodable {
     let metas:Meta
     let response:Response
@@ -21,7 +20,7 @@ struct Response :Decodable
 
 struct Contact:Decodable {
     let id:String
-    let firstName:String
+    var firstName:String
     let number:String
     let photo:String
     let lastName:String
@@ -32,4 +31,5 @@ struct Contact:Decodable {
 struct Meta : Decodable {
     let code:Int
 }
+
 

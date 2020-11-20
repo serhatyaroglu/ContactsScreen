@@ -103,7 +103,7 @@
                                                     </constraints>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </imageView>
-                                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acM-c0-1N1">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acM-c0-1N1">
                                                     <rect key="frame" x="20" y="11" width="48" height="65"/>
                                                     <color key="backgroundColor" red="0.92954987290000002" green="0.93305486439999996" blue="0.94510096310000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="17"/>
@@ -140,6 +140,7 @@
                                             <outlet property="_phoneNumber" destination="iyb-Lc-APu" id="OoZ-PL-5BB"/>
                                             <outlet property="imageLabel" destination="acM-c0-1N1" id="sIV-Wm-OKf"/>
                                             <outlet property="imagePhoto" destination="uMU-Hn-PIj" id="0ni-Hp-wAs"/>
+                                            <segue destination="aRT-Jp-bVc" kind="show" id="FHQ-D6-Rl7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -177,6 +178,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="103.79464285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9uZ-bA-N0E">
+            <objects>
+                <viewController id="aRT-Jp-bVc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VBr-gs-Ubq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4ua-PI-Nh3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VHj-cP-rwI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0s4-15-Gtz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="169"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5dY-Xx-wRo">
