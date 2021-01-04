@@ -29,12 +29,15 @@ class ViewController: UIViewController{
        @IBOutlet weak var SearchIcon: UIButton!
        @IBOutlet weak var tableview: UITableView!
        var Contacts = [Contact]()
+       var originalArr = [Contact]();
+       var searchArrRes = [[String:Any]]()
+       var searching:Bool = false
        //  var contacts : [Contact] = ContactSource.contacts
        // var sectionContacs : [[Contact]] = ContactRequest.
        var apiResult : ApiResult? = nil
        var searchedKey:String = ""
+       var dataList : [Contact] = [Contact]()
        
-
        var  CheckIcon = UIImage(named: "check")
        var  CheckIconNon = UIImage(named: "checknon")
        override func viewWillAppear(_ animated: Bool) {
@@ -55,22 +58,21 @@ class ViewController: UIViewController{
                }
                groupedFirstName.forEach({
                $0.forEach({print($0)})
-               print("-----")
-               
+               tableview.reloadData()
                })
-               
-               
                */
-              
-              // for str in [Contacts] {
-              // searchedArray.append("str")
-              //}
+              for contactsSearch in [Contacts] {
+                     Contacts.append(contentsOf: contactsSearch)
+              }
+              //  getContacts()
+              //   print(self.Contacts)
+         
               // get the keys and sort them
               //let keys = groupedDictionary.keys.sorted()
               // map the sorted keys to a struct
               //  sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
               
-              
+             // originalArr = Contacts
               
               tableview.reloadData()
               tableview.delegate = self
@@ -87,10 +89,57 @@ class ViewController: UIViewController{
               searchBarTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
               ButtonRadius.widthAnchor.constraint(equalToConstant: 343).isActive = true
               ButtonRadius.heightAnchor.constraint(equalToConstant: 48).isActive = true
+               
               ButtonRadius.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
               ButtonRadius.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
               ButtonRadius.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -37).isActive = true
        }
+       override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              let indeks = sender as? Int
+              let currentcontact = Contacts
+              if segue.identifier == "ToDetail"{
+                  let gidilecekVC = segue.destination as! DetailViewController
+                   
+
+                     if indeks != nil {
+                            gidilecekVC.Nesne = currentcontact[indeks!]
+                     }
+                  
+                  //   let str = currentcontact[indeks].firstName
+                     
+              }
+             
+       }
+       
+      /* struct ContactRequest {
+        let resourceURL:URL
+        let API_KEY = "dd30918e"
+        init(contactCode:String) {
+            let resourceString = "https://api.mocki.io/v1/\(API_KEY)"
+            guard let resourceURL = URL(string: resourceString) else {fatalError()}
+            self.resourceURL = resourceURL
+        }
+ }
+ func AllPersonTake(){
+        AF.request("https://api.mocki.io/v1/dd30918e",method: .pos).responseJSON{
+               response in
+               if let data = response.data{
+                      do{
+                             let decoder = JSONDecoder()
+                             let answer = try decoder.decode(PersonAnswer.self, from: data)
+                             if let gelenKisiListesi = cevap.Contact{
+                                 self.Contacts = gelenKisiListesi
+                             }else{
+                                 self.Contacts = [Contact]()
+                             }
+                             DispatchQueue.main.async {
+                                 self.tableview.reloadData()
+                             }
+                      }
+               }
+              }
+ }
+  */
        func getContacts() {
               AF.request("https://api.mocki.io/v1/dd30918e")
                      .validate()
@@ -108,20 +157,45 @@ class ViewController: UIViewController{
        //func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
        //     return sections[section].letter
        //}
-      
+       
        override func didReceiveMemoryWarning() {
               super.didReceiveMemoryWarning()
        }
+       
 }
 extension ViewController:UITextFieldDelegate{
        
+       /*
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+        }
+        
+        public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        //input text
+        let searchText  = textField.text! + string
+        //add matching text to arrya
+        searchArrRes = self.originalArr.filter({(($0[originalArr.first?.firstName] as! String).localizedCaseInsensitiveContains(searchText))})
+        
+        if(searchArrRes.count == 0){
+        searching = false
+        }else{
+        searching = true
+        }
+        self.tableView.reloadData();
+        
+        return true
+        }
+        */
+       
        func textFieldShouldClear(_ textField: UITextField) -> Bool{
               searchBarTextField.resignFirstResponder()
-              searchBarTextField.text = ""
+              searchBarTextField.text = Contacts.first?.firstName
               self.Contacts.removeAll()
               for contactsSearch in [Contacts] {
                      Contacts.append(contentsOf: contactsSearch)
               }
+              
               tableview.reloadData()
               return false
        }
@@ -132,6 +206,7 @@ extension ViewController:UITextFieldDelegate{
                      for contactsSearch in Contacts {
                             let range = searchedKey.description.range(of: (textField.text)!, options: .caseInsensitive, range: nil, locale: nil)
                             //.firstName.range(of: textField.text!, options: .caseInsensitive, range: nil, locale: nil)
+                            
                             if range != nil{
                                    self.Contacts.append(contactsSearch)
                             }
@@ -162,7 +237,8 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
               //TO DO : use contact request and get data from api at here
               //ContactRequest.getContacts(<#T##self: ContactRequest##ContactRequest#>)
               let currentContact = Contacts[indexPath.row]
-              cell._nameL?.text = currentContact.firstName + " " + currentContact.lastName
+              cell._nameL.text = currentContact.firstName + " " + currentContact.lastName
+              
               cell._phoneNumber?.text = currentContact.number
               cell.contentView.layer.cornerRadius = 12
               cell.contentView.layer.borderWidth = 3
@@ -186,6 +262,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
               else{
                      cell._check.image = CheckIcon
               }
+              
               // let groupByCategory = Dictionary(grouping: currentContact.firstName, by: [currentContact.firstName(String ($0))])
               // let groupByCategory = Dictionary(grouping: currentContact.firstName{String ($0)})
               // let dictionary = Dictionary(grouping: currentContact.firstName, by: { (element: Contact) in
@@ -206,9 +283,29 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
               return cell
        }
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-              //performSegue(withIdentifier: "ContactInfo", sender: Contacts[indexPath.row])
+             /* let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+              let currentContact = Contacts[indexPath.row]
+
+              vc?.Nesne = currentContact.firstName
+              self.navigationController?.pushViewController(vc!, animated: true)*/
+              let rowid = indexPath.row
+              performSegue(withIdentifier: "ToDetail", sender: rowid)
+              //performSegue(withIdentifier: "ToDetail", sender: Contacts[indexPath.item])
        }
        func numberOfSections(in tableView: UITableView) -> Int {
-              return 1
+              return 2
        }
+       
+     /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+              if segue.identifier == "showContact"{
+                     if let indexPath = tableview.indexPathForSelectedRow{
+                            let selectedContact = Contacts[indexPath.row]
+                            let detailContactViewController = navigationController?.topViewController as? DetailViewController
+                            detailContactViewController?.contact = selectedContact
+                            
+                     }
+              }
+       }*/
+       
 }
+

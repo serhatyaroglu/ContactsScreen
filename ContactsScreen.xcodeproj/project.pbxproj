@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,8 @@
 		799922BC25552BAD00ABE6D9 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799922BB25552BAD00ABE6D9 /* ContactInfo.swift */; };
 		799922C125552CCC00ABE6D9 /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799922C025552CCC00ABE6D9 /* ContactRequest.swift */; };
 		799D70F325309D23006CFB88 /* KisilerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799D70F225309D23006CFB88 /* KisilerTableViewCell.swift */; };
-		79AB643F2536DA46009796BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79AB643E2536DA46009796BB /* Assets.xcassets */; };
+		79BD6424259A3FDE002D705F /* PersonAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD6423259A3FDE002D705F /* PersonAnswer.swift */; };
+		79CDD0EC2591CCAA00610892 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CDD0EB2591CCAA00610892 /* DetailViewController.swift */; };
 		79CEF0FB252C4CBD00EB42B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF0FA252C4CBD00EB42B6 /* AppDelegate.swift */; };
 		79CEF0FD252C4CBD00EB42B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF0FC252C4CBD00EB42B6 /* SceneDelegate.swift */; };
 		79CEF0FF252C4CBD00EB42B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF0FE252C4CBD00EB42B6 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 		79CEF11D252C4CBD00EB42B6 /* ContactsScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CEF11C252C4CBD00EB42B6 /* ContactsScreenUITests.swift */; };
 		79CEF143252C883D00EB42B6 /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79CEF142252C883D00EB42B6 /* Property List.plist */; };
 		79D67D3B252F4552002AF383 /* SegoeUIFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79D67D3A252F4552002AF383 /* SegoeUIFont.ttf */; };
+		79D6AFB4258F9FC100B02D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79D6AFB3258F9FC100B02D89 /* Assets.xcassets */; };
 		D7AB5A5489D8F9349AEFBE68 /* Pods_ContactsScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95319141539585FD7E5822E /* Pods_ContactsScreen.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +50,8 @@
 		799922BB25552BAD00ABE6D9 /* ContactInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		799922C025552CCC00ABE6D9 /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
 		799D70F225309D23006CFB88 /* KisilerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KisilerTableViewCell.swift; sourceTree = "<group>"; };
-		79AB643E2536DA46009796BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Assets.xcassets"; sourceTree = "<group>"; };
+		79BD6423259A3FDE002D705F /* PersonAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonAnswer.swift; sourceTree = "<group>"; };
+		79CDD0EB2591CCAA00610892 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79CEF0F7252C4CBD00EB42B6 /* ContactsScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CEF0FA252C4CBD00EB42B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CEF0FC252C4CBD00EB42B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		79CEF11E252C4CBD00EB42B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79CEF142252C883D00EB42B6 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
 		79D67D3A252F4552002AF383 /* SegoeUIFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SegoeUIFont.ttf; sourceTree = "<group>"; };
+		79D6AFB3258F9FC100B02D89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D330248BABB75BB5061C763 /* Pods-ContactsScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsScreen.release.xcconfig"; path = "Target Support Files/Pods-ContactsScreen/Pods-ContactsScreen.release.xcconfig"; sourceTree = "<group>"; };
 		B18876165B8725E21DCFF73D /* Pods_ContactsScreen_ContactsScreenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsScreen_ContactsScreenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95319141539585FD7E5822E /* Pods_ContactsScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,8 +147,10 @@
 				799922C025552CCC00ABE6D9 /* ContactRequest.swift */,
 				799922BB25552BAD00ABE6D9 /* ContactInfo.swift */,
 				79CEF0FE252C4CBD00EB42B6 /* ViewController.swift */,
+				79BD6423259A3FDE002D705F /* PersonAnswer.swift */,
+				79CDD0EB2591CCAA00610892 /* DetailViewController.swift */,
 				79CEF100252C4CBD00EB42B6 /* Main.storyboard */,
-				79AB643E2536DA46009796BB /* Assets.xcassets */,
+				79D6AFB3258F9FC100B02D89 /* Assets.xcassets */,
 				799D70F225309D23006CFB88 /* KisilerTableViewCell.swift */,
 				79CEF105252C4CBD00EB42B6 /* LaunchScreen.storyboard */,
 				79CEF108252C4CBD00EB42B6 /* Info.plist */,
@@ -188,7 +194,6 @@
 				4D8EA1B3F28D3CAE44CB7344 /* Pods-ContactsScreenTests.debug.xcconfig */,
 				FE80AED92F4F09C845731C53 /* Pods-ContactsScreenTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -304,7 +309,7 @@
 				79CEF107252C4CBD00EB42B6 /* LaunchScreen.storyboard in Resources */,
 				79D67D3B252F4552002AF383 /* SegoeUIFont.ttf in Resources */,
 				79CEF102252C4CBD00EB42B6 /* Main.storyboard in Resources */,
-				79AB643F2536DA46009796BB /* Assets.xcassets in Resources */,
+				79D6AFB4258F9FC100B02D89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +441,10 @@
 				799922BC25552BAD00ABE6D9 /* ContactInfo.swift in Sources */,
 				799922C125552CCC00ABE6D9 /* ContactRequest.swift in Sources */,
 				79CEF0FB252C4CBD00EB42B6 /* AppDelegate.swift in Sources */,
+				79BD6424259A3FDE002D705F /* PersonAnswer.swift in Sources */,
 				79CEF0FD252C4CBD00EB42B6 /* SceneDelegate.swift in Sources */,
 				799D70F325309D23006CFB88 /* KisilerTableViewCell.swift in Sources */,
+				79CDD0EC2591CCAA00610892 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
